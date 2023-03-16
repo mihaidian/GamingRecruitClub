@@ -1,0 +1,72 @@
+﻿@model IEnumerable<GameRecruitment.Models.GameInfoModel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Game Titles</h1>
+
+<p>
+    <a asp-action="Create">Add your own game!</a>
+</p>
+<p> In order to apply as a tester, <a asp-action="Testers"> click here</a></p>
+<div>
+    <p style ="text-align:right;">Important articles: </p>
+    <p style ="text-align:right;"><a href="https://www.indeed.com/career-advice/finding-a-job/how-to-get-into-the-gaming-industry">Get Hired in gaming industry</a></p>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.GameName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AddedOn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AvailableForTest)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeadLine)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AvailableForDeveloping)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Developer)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.GameName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AddedOn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AvailableForTest)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeadLine)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AvailableForDeveloping)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Developer)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.GameID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.GameID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.GameID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
