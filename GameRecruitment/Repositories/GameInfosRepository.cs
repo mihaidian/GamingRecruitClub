@@ -28,12 +28,10 @@ namespace GameRecruitment.Repositories
         }
         public void Update(GameInfoModel model) 
         {
-            GameInfoModel game=GetGameByID(model.GameID);
-            if(game != null) 
-            {
-                _context.Games.Update(game);
+
+                _context.Games.Update(model);
                 _context.SaveChanges();
-            }
+
         }
         public void Delete(Guid id)
         {

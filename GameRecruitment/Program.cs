@@ -1,3 +1,4 @@
+using Auth0.AspNetCore.Authentication;
 using GameRecruitment.DataContext;
 using GameRecruitment.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -13,7 +14,15 @@ builder.Services.AddTransient<GamingClubDataContext, GamingClubDataContext >();
     builder.Services.AddTransient<GameInfosRepository, GameInfosRepository >();
     builder.Services.AddTransient<TesterInfosRepository,TesterInfosRepository >();
 
+builder.Services.AddAuth0WebAppAuthentication(options =>
+{
+    options.Domain = builder.Configuration["Auth0:Domain"];
+    options.ClientId = builder.Configuration["Auth0:ClientId"];
+});
+
 var app = builder.Build();
+
+app.UseAuthentication();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

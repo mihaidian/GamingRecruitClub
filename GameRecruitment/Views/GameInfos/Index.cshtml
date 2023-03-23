@@ -10,13 +10,16 @@
 <p>
     <a asp-action="Create">Add your own game!</a>
 </p>
-<p> In order to apply as a tester, <a asp-action="Testers"> click here</a></p>
+<p> In order to apply as a tester, <a href="https://localhost:7296/TesterInfos"> click here</a></p>
+<p> In order to apply as a dev, <a href="https://localhost:7296/DevInfos"> click here</a></p>
 <div>
     <p style ="text-align:right;">Important articles: </p>
-    <p style ="text-align:right;"><a href="https://www.indeed.com/career-advice/finding-a-job/how-to-get-into-the-gaming-industry">Get Hired in gaming industry</a></p>
+    <p style ="text-align:right;"><a href="https://www.indeed.com/career-advice/finding-a-job/how-to-get-into-the-gaming-industry">Get hired in Gaming industry</a></p>
+    <p style="text-align:right;"><a href="https://tilburgsciencehub.com/building-blocks/develop-your-research-skills/tips/principles-good-coding/">Principles for good coding</a></p>
+
 </div>
 
-<table class="table">
+<table class="table" style="border:2px solid red;">
     <thead>
         <tr>
             <th>
@@ -36,6 +39,7 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Developer)
+                
             </th>
             <th></th>
         </tr>
@@ -60,6 +64,7 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Developer)
+                    <img src="https://cdn-icons-png.flaticon.com/512/6364/6364343.png" alt="verify" width="25" height="25">
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.GameID">Edit</a> |
