@@ -5,23 +5,23 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Game Titles</h1>
+<h1 style ="color:lime">Game Titles</h1>
 
-<p>
-    <a asp-action="Create">Add your own game!</a>
+<p >
+    <a style="text-decoration:none; font-size:larger; color:aqua" asp-action="Create"><b>Add your own game!</b></a>
 </p>
-<p> In order to apply as a tester, <a href="https://localhost:7296/TesterInfos"> click here</a></p>
-<p> In order to apply as a dev, <a href="https://localhost:7296/DevInfos"> click here</a></p>
+<p style =" font-size:larger; color:aqua"> In order to apply as a tester, <a href="https://localhost:7296/TesterInfos" style="text-decoration:none; font-size:larger; color:orange"> click here</a></p>
+<p style=" font-size:larger; color:aqua"> In order to apply as a dev, <a href="https://localhost:7296/DevInfos" style="text-decoration:none; font-size:larger; color:orange"> click here</a></p>
 <div>
-    <p style ="text-align:right;">Important articles: </p>
-    <p style ="text-align:right;"><a href="https://www.indeed.com/career-advice/finding-a-job/how-to-get-into-the-gaming-industry">Get hired in Gaming industry</a></p>
-    <p style="text-align:right;"><a href="https://tilburgsciencehub.com/building-blocks/develop-your-research-skills/tips/principles-good-coding/">Principles for good coding</a></p>
-
+    <p style ="text-align:right; font-size:large; color:aquamarine">Important articles: </p>
+    <p style ="text-align:right;"><a href="https://www.indeed.com/career-advice/finding-a-job/how-to-get-into-the-gaming-industry" style="text-decoration:none; color:yellow; font-size:large">Get hired in Gaming industry</a></p>
+    <p style="text-align:right;"><a href="https://tilburgsciencehub.com/building-blocks/develop-your-research-skills/tips/principles-good-coding/" style="text-decoration:none; color:yellow; font-size:large">Principles for good coding</a></p>
+    <p style=" font-size:larger; color:aqua"> All available games: </p>
 </div>
 
 <table class="table" style="border:2px solid red;">
     <thead>
-        <tr>
+        <tr style="color:#66F900">
             <th>
                 @Html.DisplayNameFor(model => model.GameName)
             </th>
@@ -46,7 +46,7 @@
     </thead>
     <tbody>
 @foreach (var item in Model) {
-        <tr>
+            <tr style="font-size:18px; color:#FF8F00 ">
             <td>
                 @Html.DisplayFor(modelItem => item.GameName)
             </td>
@@ -67,9 +67,9 @@
                     <img src="https://cdn-icons-png.flaticon.com/512/6364/6364343.png" alt="verify" width="25" height="25">
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.GameID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.GameID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.GameID">Delete</a>
+                    <a style="text-decoration:none; color:orangered" asp-action="Edit" asp-route-id="@item.GameID">Edit</a> |
+                    <a style="text-decoration:none; color:orangered" asp-action="Details" asp-route-id="@item.GameID">Details</a> |
+                    <a style="text-decoration:none; color:orangered" asp-action="Delete" asp-route-id="@item.GameID">Delete</a>
             </td>
         </tr>
 }

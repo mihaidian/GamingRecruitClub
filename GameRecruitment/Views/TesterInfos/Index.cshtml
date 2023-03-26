@@ -5,15 +5,16 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Find Testers to Hire</h1>
+<h1 style="color:lime">Find Testers for hire</h1>
 
-<p>
-    <a asp-action="Create">Tester looking for a job? You can apply here.</a>
+<p style=" font-size:larger; color:aqua">
+   If you wish to apply as a tester, <a style="text-decoration:none; font-size:larger; color:orange" asp-action="Create"> click here</a>
 </p>
-<p> Apply for games published in our platform. If you apply for a non-existent game your appliance will get <b> deleted!</b></p>
-<table class="table">
+<p style=" font-size:larger; color:aqua"> Please apply to games posted on the platform, applying to non-existent games will result to <b>deleting your appliance!</b>  </p>
+<p style=" font-size:larger; color:aqua"> All available testers: </p>
+<table class="table" style="border:2px solid red;">
     <thead>
-        <tr>
+        <tr style="color:#66F900">
             <th>
                 @Html.DisplayNameFor(model => model.FirstName)
             </th>
@@ -26,13 +27,16 @@
             <th>
                 @Html.DisplayNameFor(model => model.GameChoice)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
-        <tr>
-            <td>
+            <tr style ="font-size:18px; color:#FF8F00 ">
+                <td>
                 @Html.DisplayFor(modelItem => item.FirstName)
             </td>
             <td>
@@ -45,9 +49,12 @@
                 @Html.DisplayFor(modelItem => item.GameChoice)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.TesterID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.TesterID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.TesterID">Delete</a>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                    <a style="text-decoration:none; color:orangered" asp-action="Edit" asp-route-id="@item.TesterID">Edit</a> |
+                    <a style="text-decoration:none; color:orangered" asp-action="Details" asp-route-id="@item.TesterID">Details</a> |
+                    <a style="text-decoration:none; color:orangered" asp-action="Delete" asp-route-id="@item.TesterID">Delete</a>
             </td>
         </tr>
 }

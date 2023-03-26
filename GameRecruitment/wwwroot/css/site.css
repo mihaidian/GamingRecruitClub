@@ -28,15 +28,11 @@ body {
 {
     background-color: lightyellow;
 }
-.footer
-{
-background-color: orangered;
+.footer {
+    background-image: url("https://i.pinimg.com/originals/35/13/38/3513382f64c47d3cf805a88ee6dc4169.jpg");
+    background-size: cover;
 }
-.Authentification
-{
-    font-family:Gabriola;
-    color:black;
-    font-size:30px;
-    text-decoration:none;
-text-align:right;
+body {
+    background-image: url("https://marketplace.canva.com/EAE98IQlC5E/1/0/1600w/canva-purple-simple-gaming-background-futuristic-game-zone-desktop-wallpaper-iC5A8PGB4t0.jpg");
+    background-size:cover;
 }

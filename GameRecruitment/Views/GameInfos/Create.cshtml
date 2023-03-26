@@ -5,11 +5,11 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Publish your game</h1>
+<h1 style="color:lime">Publish your game</h1>
 
 
 <hr />
-<div class="row">
+<div class="row" style="font-size:18px; color:#FF8F00">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -51,7 +51,7 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a style="text-decoration:none; color:orangered" asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

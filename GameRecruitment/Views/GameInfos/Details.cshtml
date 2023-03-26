@@ -5,12 +5,12 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Details</h1>
+<h1 style="color:lime">Details</h1>
 
 <div>
 
     <hr />
-    <dl class="row">
+    <dl class="row" style="color:#66F900; border:2px solid red; font-size:x-large">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.GameName)
         </dt>
@@ -51,6 +51,6 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.GameID">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a style="text-decoration:none; color:orangered" asp-action="Edit" asp-route-id="@Model?.GameID">Edit</a> |
+    <a style="text-decoration:none; color:orangered" asp-action="Index">Back to List</a>
 </div>
