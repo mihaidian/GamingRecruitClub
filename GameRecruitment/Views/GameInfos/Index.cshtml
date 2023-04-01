@@ -64,7 +64,16 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Developer)
-                    <img src="https://cdn-icons-png.flaticon.com/512/6364/6364343.png" alt="verify" width="25" height="25">
+                
+                    @if(item.Developer=="Riot Games"||item.Developer=="EA Sports")
+                    {
+                        <img src="https://cdn-icons-png.flaticon.com/512/6364/6364343.png" alt="verify" width="25" height="25">
+                    }
+                    else
+                    {
+                       
+                    }
+
             </td>
             <td>
                     <a style="text-decoration:none; color:orangered" asp-action="Edit" asp-route-id="@item.GameID">Edit</a> |

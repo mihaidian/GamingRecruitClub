@@ -1,0 +1,49 @@
+﻿@model IEnumerable<GameRecruitment.Models.CompanyInfoModel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 style="color:lime">Verified Companies</h1>
+
+<p style=" font-size:larger; color:aqua">
+    In order to apply as a Verified company, contact us at the Contact Us Tab or at GameRecruitment@club.ro and you will be added as a verified Company by our team.
+</p>
+<p style=" font-size:larger; color:aqua">
+    Verified companies have a <img src="https://cdn-icons-png.flaticon.com/512/6364/6364343.png" alt="verify" width="25" height="25"> after their name.
+</p>
+<table class="table" style="border:2px solid red;">
+    <thead>
+        <tr style="color:#66F900">
+            <th>
+                @Html.DisplayNameFor(model => model.CompanyName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Recruiting)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MemberSince)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+            <tr style="font-size:18px; color:#FF8F00 ">
+            <td>
+                @Html.DisplayFor(modelItem => item.CompanyName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Recruiting)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MemberSince)
+            </td>
+            <td>
+                    <a style="text-decoration:none; color:orangered" asp-action="Details" asp-route-id="@item.CompanyId">Details</a> |
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

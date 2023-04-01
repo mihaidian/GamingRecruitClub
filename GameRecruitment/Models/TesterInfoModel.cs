@@ -23,6 +23,7 @@ namespace GameRecruitment.Models
         public string GameChoice { get; set; }
         [StringLength(150, ErrorMessage = "This field cannot get over 150 characters!")]
         [Required]
+
         public string Email { get; set; }
     }
 }

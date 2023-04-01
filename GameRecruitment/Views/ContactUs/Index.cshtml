@@ -1,0 +1,59 @@
+﻿@model GameRecruitment.Models.ContactUsModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<div>
+    <div class="col-md-6">
+        <div>
+            @if (ViewBag.Message == null)
+            {
+                <h1 style="color:lime"> Contact Tehnical Support</h1>
+
+                <div>
+                    <form method="post">
+                        <div class="form-group" style="color:darkorange">
+                            <label asp-for="Name"><b>Name</b></label>
+                            <input asp-for="Name" class="form-control" />
+                            <span asp-validation-for="Name" class="text-muted"></span>
+                        </div>
+                        <div class="form-group" style="color:darkorange">
+                            <label asp-for="Email"><b>Email</b></label>
+                            <input asp-for="Email" class="form-control" />
+                            <span asp-validation-for="Email" class="text-muted"></span>
+                        </div>
+                        <div class="form-group" style="color:darkorange">
+                            <label asp-for="Subject"><b>Subject</b></label>
+                            <input asp-for="Subject" class="form-control" />
+                            <span asp-validation-for="Subject" class="text-muted"></span>
+                        </div>
+                        <div class="form-group" style="color:darkorange">
+                            <label asp-for="Message"><b>Message</b></label>
+                            <textarea rows="5" cols="15" asp-for="Message" class="form-control"></textarea>
+                            <span asp-validation-for="Message" class="text-muted"></span>
+                        </div>
+                        <div>
+                            <button type="submit" class="btn btn-success">Send </button>
+                        </div>
+
+                    </form>
+                </div>
+
+            }
+        </div>
+
+
+        <div>
+            <div>
+                @if (ViewBag.Message != null)
+            {
+                    <div>@ViewBag.Message</div>
+
+                }
+            </div>
+        </div>
+    </div>
+
+</div>

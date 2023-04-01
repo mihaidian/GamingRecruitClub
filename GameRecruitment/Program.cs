@@ -13,6 +13,7 @@ builder.Services.AddTransient<GamingClubDataContext, GamingClubDataContext >();
     builder.Services.AddTransient<DevInfosRepository,DevInfosRepository >();
     builder.Services.AddTransient<GameInfosRepository, GameInfosRepository >();
     builder.Services.AddTransient<TesterInfosRepository,TesterInfosRepository >();
+builder.Services.AddTransient<CompanyInfosRepository,  CompanyInfosRepository >();
 
 builder.Services.AddAuth0WebAppAuthentication(options =>
 {
