@@ -34,5 +34,29 @@ namespace GameRecruitment.Controllers
             _repository.Add(model);
             return RedirectToAction("Index");
         }
+        public IActionResult Edit(Guid id) 
+        {
+            var company=_repository.GetCompaniesById(id);
+            return View("Edit",company);
+        }
+        [HttpPost]
+        public IActionResult Edit(IFormCollection collection, Guid id)
+        {
+            var model=new CompanyInfoModel();
+            TryUpdateModelAsync(model);
+            _repository.Update(model);
+            return RedirectToAction("Index");
+        }
+        public IActionResult Delete(Guid id) 
+        {
+            var company = _repository.GetCompaniesById(id);
+            return View("Delete",company);
+        }
+        [HttpPost]
+        public IActionResult Delete(Guid id, IFormCollection collection)
+        {
+            _repository.Delete(id);
+            return RedirectToAction("Index");
+        }
     }
 }
